@@ -1,0 +1,180 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Karen</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="contact"></ion-icon>
+      </button>
+      <button ion-button icon-only>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!--section1-->
+  <!--slider-->
+  <div>
+    <!--pager:角标 循环 自动播放-->
+    <ion-slides pager="true" loop="true" autoplay="2000">
+        <!--http://h8.86.cc/walls/20160405/1440x900_4f7aa997cfb7458.jpg-->
+      <ion-slide>
+        <ion-thumbnail class="banner"
+            [ngStyle]="{'background-image':'url('+ 'http://h8.86.cc/walls/20160405/1440x900_4f7aa997cfb7458.jpg' +')'}">
+        </ion-thumbnail>
+      </ion-slide>
+      <ion-slide>
+        <ion-thumbnail class="banner"
+            [ngStyle]="{'background-image':'url('+ 'http://img0.imgtn.bdimg.com/it/u=1799003942,3969474578&fm=23&gp=0.jpg' +')'}">
+        </ion-thumbnail>
+      </ion-slide>
+      <ion-slide>
+        <ion-thumbnail class="banner"
+            [ngStyle]="{'background-image':'url('+ 'http://img4.imgtn.bdimg.com/it/u=1664182444,1114316340&fm=23&gp=0.jpg' +')'}">
+        </ion-thumbnail>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <!--section2-->
+  <!--items-->
+  <div>
+    <ion-list>
+      <ul class="list">
+        <li>
+          <ion-icon name="heart" icon-only></ion-icon>
+          <p>新闻</p>
+        </li>
+        <li>
+          <ion-icon name="american-football" icon-only></ion-icon>
+          <p>娱乐</p>
+        </li>
+        <li>
+          <ion-icon name="md-appstore"></ion-icon>
+          <p>商店</p>
+        </li>
+        <li>
+           <ion-icon name="book"></ion-icon>
+           <p>阅读</p>
+        </li>
+      </ul>
+    </ion-list>
+  </div>
+
+  <div class="gap"></div>
+
+  <!--section3-->
+  <!--recommend-->
+  <div class="recommend">
+    <div class="head">
+      <ion-icon name="md-happy"></ion-icon>
+      <span>热卖推荐</span>
+    </div>
+    <div class="zry">
+      <ion-row class="li" *ngFor="let data of datas">
+        <ion-col width-10>{{data.id}}</ion-col>
+        <ion-col width-25>{{data.name}}</ion-col>
+        <ion-col width-65><img src="{{data.imgUrl}}" alt=""></ion-col>
+      </ion-row>  
+    </div>
+  </div>
+
+  <!--section4-->
+  <!--tabs-->
+  <div class="section4">
+    <ion-segment [(ngModel)]="tabsOption">
+      <ion-segment-button value="spring">
+        春天
+      </ion-segment-button>
+      <ion-segment-button value="summer">
+        夏天
+      </ion-segment-button>
+      <ion-segment-button value="autumn">
+        秋天
+      </ion-segment-button>
+      <ion-segment-button value="winter">
+        冬天
+      </ion-segment-button>
+    </ion-segment>
+
+    <div [ngSwitch]="tabsOption">
+      <!--1-->
+      <div *ngSwitchCase="'spring'">
+        <ion-card>
+          <ion-row *ngFor="let data of datas">
+            <ion-col width-33>
+              <ion-thumbnail><img src="{{data.imgUrl}}" alt=""></ion-thumbnail>
+            </ion-col>
+            <ion-col width-67>
+                <h2>{{data.id}}</h2>
+                <p>{{data.name}}</p>
+                <h3>one</h3>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+      <!--2-->
+      <div *ngSwitchCase="'summer'">
+        <ion-card>
+          <ion-row *ngFor="let data of datas">
+            <ion-col width-33>
+              <ion-thumbnail><img src="{{data.imgUrl}}" alt=""></ion-thumbnail>
+            </ion-col>
+            <ion-col width-67>
+                <h2>{{data.id}}</h2>
+                <ion-icon name="heart" icon-only></ion-icon>
+                <h3>two</h3>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+      <!--3-->
+      <div *ngSwitchCase="'autumn'">
+        <ion-card>
+          <ion-row *ngFor="let data of datas">
+            <ion-col width-33>
+              <ion-thumbnail><img src="{{data.imgUrl}}" alt=""></ion-thumbnail>
+            </ion-col>
+            <ion-col width-67>
+                <p>{{data.name}}</p>
+                <ion-icon name="md-happy"></ion-icon>
+                <h3>three</h3>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+      <!--4-->
+      <div *ngSwitchCase="'winter'">
+        <ion-card>
+          <ion-row *ngFor="let data of datas">
+            <ion-col width-33>
+              <ion-thumbnail><img src="{{data.imgUrl}}" alt=""></ion-thumbnail>
+            </ion-col>
+            <ion-col width-67>
+                <h2>{{data.id}}</h2>
+                <p>{{data.name}}</p>
+                <h3>four</h3>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+
+  <!--section5-->
+  <!--friends-->
+  <div class="section5">
+    <h5>合作伙伴</h5>
+    <div class="friends">
+      <button ion-button>香蕉</button>
+      <button ion-button>苹果</button>
+      <button ion-button>橙子</button>
+      <button ion-button>草莓</button>
+      <button ion-button>火龙果</button>
+      <button ion-button>樱桃</button>
+      <button ion-button>西瓜</button>
+    </div>
+  </div>
+
+</ion-content>

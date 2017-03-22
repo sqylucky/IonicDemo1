@@ -1,0 +1,110 @@
+page-home {
+    font-family: "微软雅黑";
+    *{margin: 0;padding: 0;}
+    .banner {
+        width: 100%;
+        height: 0;
+        padding-bottom: 35%;
+        overflow: hidden;
+        background-position: center center;
+        background-size: cover;
+    }
+    .list{
+        width: 100%;
+        overflow: hidden;
+        list-style: none;
+        padding: 6px 0;
+        box-sizing: border-box;
+        display: -webkit-flex;
+        display: flex;
+    }
+    .list li{
+        text-align: center;
+        color:#f66;
+        flex: 1;
+    }
+    .list-ios{margin: 0;}
+    .gap{
+        width: 100%;
+        height: 10px;
+        background: #f1f1f1;
+    }
+    .recommend{
+        width: 100%;
+        overflow: hidden;
+        line-height: 40px;
+        color:red;
+        .head{
+            overflow: hidden;
+            border-bottom:1px solid #ccc;
+            ion-icon{
+                font-size: 30px;
+                float: left;
+                margin:4px 6px 0 6px;
+                color:#f44;
+            }
+            span{
+                font-size: 16px;
+            }
+        }
+        .zry{
+            span{
+                float: left;
+            }
+            .li {
+                border-bottom:1px solid #ccc;
+                padding:10px 0;
+                text-align:center;
+                img{
+                    width: 80%;
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+            p{padding-right: 10px;}
+        }
+    }
+    .section4{
+        ion-segment{
+            margin-bottom:6px;
+        }
+        .segment-ios .segment-button{
+            border:none;         
+        }
+        .segment-ios .segment-button.segment-activated{
+            background: transparent;
+            color:orangered;
+            font-weight: bold;
+            border-bottom: 2px solid orangered;
+        }
+        .card-ios{
+            box-shadow: none;
+            .row{
+                border-bottom: 1px solid #ccc;
+            }
+        }
+    }
+    .section5{
+        h5{
+            font-size: 14px;
+            padding-left: 10px;
+        }
+        .friends{
+            display: flex;
+            flex-wrap:wrap;
+            padding-bottom: 10px;
+            .button-ios{
+                color: orangered;
+                text-align: center;
+                height: 20px;
+                font-size: 14px;
+                margin:5px;
+                background-color: #ffffff;
+                border-radius: 10px;
+                border: solid 1px red;
+            }
+            
+            
+        }
+    }
+}
