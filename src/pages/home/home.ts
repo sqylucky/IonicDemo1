@@ -27,13 +27,7 @@ export class HomePage{
     
   }
 
-
-  // section4 tabs 
-  tabsOption: string = "spring";
-  
-
-
-  // listSelectType
+  // section2 listSelectType
   listSelectType(index:number){
     if(index == 1){
       this.navCtrl.push(AboutPage);
@@ -47,4 +41,11 @@ export class HomePage{
       alert("敬请期待");
     }
   }
+
+  // section4 tabs 
+  tabsOption: string = "spring";
+  
+
+
+  
 }
