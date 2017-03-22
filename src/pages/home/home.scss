@@ -103,8 +103,12 @@ page-home {
                 border-radius: 10px;
                 border: solid 1px red;
             }
-            
-            
+            .button-ios:hover{
+                color:#000;
+                border-color:#000;
+                opacity: 0.8;
+            }
+           
         }
     }
 }

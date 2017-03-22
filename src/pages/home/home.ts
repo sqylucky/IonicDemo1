@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController ,MenuController ,Content } from 'ionic-angular';
 import { Data } from '../../app/data';
 
 
@@ -17,12 +17,17 @@ export class HomePage{
   ];
   
   constructor(
-  public navCtrl: NavController,)  
+    public navCtrl: NavController,
+    public menuCtrl:MenuController)  
   {
   
     
   }
 
+  // menuCtrl
+  showFilter(){
+    this.menuCtrl.open('filterMenu');
+  }
   // section4 tabs 
   tabsOption: string = "spring";
   
