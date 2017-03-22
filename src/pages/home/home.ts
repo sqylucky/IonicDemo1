@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { NavController ,MenuController ,Content } from 'ionic-angular';
 import { Data } from '../../app/data';
 
+import { AboutPage } from '../about/about';
+import { ContactPage } from '../contact/contact';
+import { CommonPage } from'../pages/common/common';
 
 @Component({
   selector: 'page-home',
@@ -24,17 +27,24 @@ export class HomePage{
     
   }
 
-  // menuCtrl
-  showFilter(){
-    this.menuCtrl.open('filterMenu');
-  }
+
   // section4 tabs 
   tabsOption: string = "spring";
   
 
-  clickLi(){
-    
-    
-  }
 
+  // listSelectType
+  listSelectType(index:number){
+    if(index == 1){
+      this.navCtrl.push(AboutPage);
+    }else if(index ==2 ){
+      this.navCtrl.push(ContactPage);
+    }else if(index == 3){
+      alert("敬请期待");
+    }else if(index == 4){
+      alert("敬请期待");
+    }else{
+      alert("敬请期待");
+    }
+  }
 }

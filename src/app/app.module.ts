@@ -12,7 +12,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -23,7 +23,7 @@ import { TabsPage } from '../pages/tabs/tabs';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

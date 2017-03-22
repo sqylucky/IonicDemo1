@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>Karen</ion-title>
-    <ion-buttons end style="width:64px">
+    <ion-buttons end style="width:20%;">
       <button ion-button icon-only style="float:left;">
         <ion-icon name="contact"></ion-icon>
       </button>
@@ -42,19 +42,19 @@
   <div>
     <ion-list>
       <ul class="list">
-        <li>
+        <li (tap)="listSelectType(1)">
           <ion-icon name="heart" icon-only></ion-icon>
           <p>新闻</p>
         </li>
-        <li>
+        <li (tap)="listSelectType(2)">
           <ion-icon name="american-football" icon-only></ion-icon>
           <p>娱乐</p>
         </li>
-        <li>
+        <li (tap)="listSelectType(3)">
           <ion-icon name="md-appstore"></ion-icon>
           <p>商店</p>
         </li>
-        <li>
+        <li (tap)="listSelectType(4)">
            <ion-icon name="book"></ion-icon>
            <p>阅读</p>
         </li>
