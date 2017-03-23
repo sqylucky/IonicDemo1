@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-
 import { NavController ,MenuController ,Content } from 'ionic-angular';
+import { LoadingController } from 'ionic-angular';
 import { Data } from '../../app/data';
+
 
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
@@ -21,15 +22,28 @@ export class HomePage{
   
   constructor(
     public navCtrl: NavController,
-    public menuCtrl:MenuController)  
-  {
-  
-    
-  }
+    public menuCtrl:MenuController,
+    public loadingCtrl: LoadingController
+   ){ }
+
+     // loading
+    // presentLoading() {
+    //   let loader = this.loadingCtrl.create({
+    //     content: "Please wait...",
+    //     duration: 3000
+    //   });
+    //   loader.present();
+    // }
 
   // section2 listSelectType
   listSelectType(index:number){
     if(index == 1){
+       // loading
+       let loader = this.loadingCtrl.create({
+        content: "Please wait...",
+        duration: 2000
+      });
+      loader.present();
       this.navCtrl.push(AboutPage);
     }else if(index ==2 ){
       this.navCtrl.push(ContactPage);
@@ -45,7 +59,7 @@ export class HomePage{
   // section4 tabs 
   tabsOption: string = "spring";
   
-
+ 
 
   
 }

@@ -7,8 +7,8 @@
 </ion-header>
 
 <ion-content padding>
-  
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <button ion-button (click)="presentLoading()">loading</button>
+  <ion-searchbar [ngStyle]="{'background':'red'}" (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let item of items">
       {{ item }}

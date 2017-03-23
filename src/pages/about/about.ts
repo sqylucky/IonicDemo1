@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-
-// import { NavController , NavParams } from 'ionic-angular';
-
+import { LoadingController } from 'ionic-angular';
 
 @Component({
   selector: 'page-about',
@@ -11,10 +9,19 @@ export class AboutPage  {
   searchQuery: string = '';
   items: string[];
 
-
-  constructor() {
+  constructor( public loadingCtrl: LoadingController) {
     this.initializeItems();
   }
+
+   // loading
+  presentLoading() {
+    let loader = this.loadingCtrl.create({
+      content: "Please wait...",
+      duration: 3000
+    });
+    loader.present();
+  }
+   
 
   initializeItems(){
     this.items = [
@@ -44,6 +51,10 @@ export class AboutPage  {
       })
     }
   }
+
+
+
+
 } 
 
 
