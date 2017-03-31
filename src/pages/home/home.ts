@@ -6,7 +6,7 @@ import { Data } from '../../app/data';
 
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
-import { CommonPage } from'../pages/common/common';
+import { SeatPage } from '../seat/seat';
 
 @Component({
   selector: 'page-home',
@@ -26,29 +26,29 @@ export class HomePage{
     public loadingCtrl: LoadingController
    ){ }
 
-     // loading
-    // presentLoading() {
-    //   let loader = this.loadingCtrl.create({
-    //     content: "Please wait...",
-    //     duration: 3000
-    //   });
-    //   loader.present();
-    // }
-
   // section2 listSelectType
   listSelectType(index:number){
     if(index == 1){
        // loading
-       let loader = this.loadingCtrl.create({
+       let loading = this.loadingCtrl.create({
         content: "Please wait...",
-        duration: 2000
+        spinner:'hide'
       });
-      loader.present();
-      this.navCtrl.push(AboutPage);
+      
+      loading.present();
+      
+      setTimeout(() => {
+        this.navCtrl.push(AboutPage);
+      },2000);
+      
+      setTimeout(() => {
+        loading.dismiss();
+      },3000);
+      
     }else if(index ==2 ){
       this.navCtrl.push(ContactPage);
     }else if(index == 3){
-      alert("敬请期待");
+      this.navCtrl.push(SeatPage);
     }else if(index == 4){
       alert("敬请期待");
     }else{

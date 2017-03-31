@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoadingController } from 'ionic-angular';
+import { ItemSliding } from 'ionic-angular';
 
 @Component({
   selector: 'page-about',
@@ -22,7 +23,7 @@ export class AboutPage  {
     loader.present();
   }
    
-
+  // searchbar
   initializeItems(){
     this.items = [
       'beijing',
@@ -52,8 +53,24 @@ export class AboutPage  {
     }
   }
 
+  // sliding
+  share(slidingItem:ItemSliding){
+    slidingItem.close();
+  }
 
-
+  // ondrag(item) {
+  //   let percent = item.getSlidingPercent();
+  //   if (percent > 0) {
+  //     // positive
+  //     console.log('right side');
+  //   } else {
+  //     // negative
+  //     console.log('left side');
+  //   }
+  //   if (Math.abs(percent) > 1) {
+  //     console.log('overscroll');
+  //   }
+  // }
 
 } 
 

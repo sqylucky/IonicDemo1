@@ -1,5 +1,5 @@
 import { Component , ViewChild} from '@angular/core';
-import { Platform ,NavController, MenuController, } from 'ionic-angular';
+import { Platform , MenuController, Nav} from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
 import { TabsPage } from '../pages/tabs/tabs';
@@ -7,6 +7,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from'../pages/home/home';
 import { AboutPage } from'../pages/about/about';
 import { ContactPage } from'../pages/contact/contact';
+import { SeatPage } from'../pages/seat/seat';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -14,7 +16,7 @@ export class MyApp {
   rootPage = TabsPage;
   pages:Array<{title:string ,component:any}>;
   // add
-    @ViewChild('nav') nav: NavController;
+    @ViewChild(Nav) nav: Nav;
 
   constructor(platform: Platform,
       public menu:MenuController) {
@@ -25,9 +27,10 @@ export class MyApp {
       Splashscreen.hide();
 
       this.pages = [
-        { title:'Home',component:HomePage},
+        { title: 'Home',component:HomePage},
         { title: 'About', component: AboutPage},
-        { title: 'Contact', component: ContactPage}
+        { title: 'Contact', component: ContactPage},
+        { title: 'Seat',component:SeatPage}
       ]
     });
   }
